@@ -1,0 +1,16 @@
+<div class="card">
+  <h2>Registrar nuevo curso</h2>
+
+  <input type="text" placeholder="Nombre del curso" [(ngModel)]="name">
+
+  <input type="number" placeholder="Duración (horas)" (ngModel)]="duration">
+
+  <select [(ngModel)]="level">
+    <option value="" disabled selected>Nivel</option>
+    <option value="Básico">Básico</option>
+    <option value="Intermedio">Intermedio</option>
+    <option value="Avanzado">Avanzado</option>
+  </select>
+
+  <button (click)="addCourse()">Agregar curso</button>
+</div>

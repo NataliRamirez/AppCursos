@@ -1,0 +1,30 @@
+<h2>Cursos registrados</h2>
+
+<div *ngIf="courses.length === 0" class="empty-message">
+  No hay cursos registrados.
+</div>
+
+<div *ngFor="let course of courses" class="course-item">
+
+  <div class="course-title">{{ course.courseName }}</div>
+
+  <div class="course-info">Duración: {{ course.courseDuration }} horas</div>
+
+  <div *ngIf="course.courseStatus" class="status-active">Activo</div>
+
+  <div *ngIf="!course.courseStatus" class="status-inactive">Inactivo</div>
+
+  
+  <div>
+    <button class="btn-coursestatus"
+      (click)="toggleStatus(course.courseId)">
+      {{ course.courseStatus ? 'Desactivar' : 'Activar' }}
+    </button>
+
+    <button class="btn-deletecourse"
+      (click)="deleteCourse(course.courseId)">
+      Eliminar
+    </button>
+  </div>
+
+</div>
